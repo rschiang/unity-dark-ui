@@ -1,8 +1,12 @@
 .tree-view {
   font:11px/15px "Lucida Grande";
   background: #2f2e33;
-  padding:4px 6px;
-  min-width:0;
+  border-right: 4px solid #2f2e33;
+  min-width: -webkit-min-content;
+  min-height: 100%;
+  padding-left: 5px;
+  padding-right: 10px;
+  position: relative;
 }
 
 .focusable-panel {
@@ -11,7 +15,9 @@
 
 .tree-view-scroller {
   border-top:1px solid #222225;
-  overflow-x:hidden;
+  height:100%;
+  width:100%;
+  overflow:auto;
 
   .is-blurred & {
     border-color:#333239;
@@ -95,6 +101,7 @@
     inset rgba(21,21,24,0.56) 0 1px 0,
     inset rgba(21,21,24,0.56) 0 -1px 0,
     inset rgba(92,92,96,0.42) 0 2px 0;
+  margin-right: -4px;
 }
 
 .tree-view:focus .selected:before {
@@ -103,6 +110,7 @@
   border-width:1px 0 0;
   color:#fff;
   text-shadow:rgba(0,0,0,0.8) 0 1px;
+  margin-right: -4px;
 }
 
 .tree-view:focus .selected.new:before,
