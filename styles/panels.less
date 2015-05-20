@@ -50,12 +50,12 @@ atom-panel {
 }
 
 .status-bar {
-  color: fadeout(@text-color-highlight, 30%);
+  color: @text-color-subtle-inverted;
   height:26px;
   line-height:23px;
   padding:0;
-  background:linear-gradient(#e4e4e4, #d8d8d8);
-  border-color:#a1a1a1;
+  background:@status-bar-background-color;
+  border-color:@status-bar-border-color;
 
   .status-bar-left {
     margin-left:@component-padding;
@@ -70,4 +70,11 @@ atom-panel {
   margin-top:3px;
   font-size:1em;
   color:@text-color-subtle;
+}
+
+atom-workspace {
+  background: #1c1c1c;
+  color: @text-color-inverted;
+
+  .is-blurred & { background: fadeout(#1c1c1c, 10%); }
 }

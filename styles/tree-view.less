@@ -8,13 +8,13 @@
   -webkit-backface-visibility:hidden;
   font-size:@font-size - 1;
   padding:4px 0 4px 15px;
-  color:@text-color;
+  color:@text-color-inverted;
 
   .is-blurred & {
-    background:#f8f8f8;
+    background:fadeout(@tree-view-background-color, 10%);;
 
     .selected:before {
-      background:greyscale(@background-color-highlight);
+      background:greyscale(@background-color-highlight-inverted);
     }
   }
 
@@ -36,10 +36,10 @@
   }
 
   li.selected {
-    color:@text-color;
+    color:@text-color-highlight-inverted;
 
     &:before {
-      background: @background-color-highlight;
+      background: @background-color-highlight-inverted;
       height:@item-height;
     }
   }
@@ -49,7 +49,7 @@
   .status-modified,
   .status-removed,
   .status-info {
-    color:@text-color;
+    color:@text-color-inverted;
   }
 
   .status-added:after {
@@ -86,7 +86,7 @@
   &.unity-ui-fade-status {
     .status-added:after,
     .status-modified:after {
-      color:@text-color;
+      color:@text-color-inverted;
       opacity:0.2;
     }
   }

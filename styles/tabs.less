@@ -1,5 +1,5 @@
 .tab-bar {
-  border-top:1px solid @pane-item-border-color;
+  border-top:1px solid @base-border-color;
   border-bottom:1px solid #b7b5b7;
   font-size:@font-size - 1;
   height:27px;
@@ -130,5 +130,9 @@
 
   .icon:before {
     margin-right:3px;
+  }
+
+  &:empty {
+    display: none;
   }
 }

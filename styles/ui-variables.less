@@ -7,6 +7,9 @@
 @text-color-success:#6DCC50;
 @text-color-warning:#F9A646;
 @text-color-error:#FF625C;
+@text-color-inverted: #a8a8a8;
+@text-color-subtle-inverted: #555;
+@text-color-highlight-inverted: #fff;
 
 // Background colors
 @background-color-info:@text-color-info;
@@ -14,7 +17,8 @@
 @background-color-warning:@text-color-warning;
 @background-color-error:@text-color-error;
 @background-color-highlight:#D0E6E7;
-@background-color-selected:#0364E3;
+@background-color-highlight-inverted:#1f1f1f;
+@background-color-selected:#616161;
 @app-background-color: #e4e4e4;
 
 // Base colors
@@ -23,7 +27,7 @@
 
 // Component colors
 @pane-item-background-color:@base-background-color;
-@pane-item-border-color: @base-border-color;
+@pane-item-border-color: #484848;
 @input-background-color:#fff;
 @input-border-color:#ededed;
 @tool-panel-background-color:darken(@pane-item-background-color, 3%);
@@ -43,8 +47,10 @@
 @tab-background-color:#CDCCCD;
 @tab-background-color-active:#DDDCDD;
 @tab-border-color:#b0b0b0;
-@tree-view-background-color:#EEF5F6;
-@tree-view-border-color:#b0b0b0;
+@tree-view-background-color:#252525;
+@tree-view-border-color:@base-border-color;
+@status-bar-background-color:#1c1c1c;
+@status-bar-border-color:@status-bar-background-color;
 
 // Site colors
 @ui-site-color-1:@text-color-info;
