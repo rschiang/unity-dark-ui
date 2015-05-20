@@ -2,11 +2,10 @@
 
 A dark alternative Atom theme for a more native experience on OS X.
 
-Here's how it looks like on Mavericks:
+Here's how it looks like on Mavericks with a 10.10 Yosemite style:
 
-![Screenshot](https://github.com/rschiang/unity-dark-ui/raw/gh-pages/screenshot.png)
+![Screenshot](https://cloud.githubusercontent.com/assets/1512231/7736073/148e8f3c-ff74-11e4-93b9-7427f10caf55.png)
 
-Yosemite style also available on OS X 10.10 or higher.
 
 ## Installing
 
