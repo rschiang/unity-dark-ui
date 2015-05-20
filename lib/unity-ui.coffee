@@ -1,29 +1,33 @@
-{$} = require 'atom'
+addClass = (el, klass) ->
+  return unless el
+  el.className = "#{el.className} #{klass}"
+
+removeClass = (el, klass) ->
+  return unless el
+  classes = el.className.split(' ')
+  index = classes.indexOf(klass)
+  classes.splice(index, 1) if index >= 0
+  el.className = classes.join(' ')
 
 module.exports =
-  configDefaults:
-    allowTreeViewToScrollHorizontally: false
+  config:
+    showIcons:
+      type: 'boolean'
+      default: false
+    colorStatusIndicatorsInTreeView:
+      type: 'boolean'
+      default: false
 
   activate: (state) ->
-      atom.config.observe 'unity-ui.allowTreeViewToScrollHorizontally', ->
-        if atom.config.get('unity-ui.allowTreeViewToScrollHorizontally')
-          $('.tree-view-scroller').addClass('tree-view-scrolls-horizontally')
-        else
-          $('.tree-view-scroller').removeClass('tree-view-scrolls-horizontally')
-
-      useragent = navigator.userAgent
-
-      if matches = useragent.match(/Mac OS X 10_([0-9]+)_[0-9]+/i)
-        version = parseInt(matches[1], 10)
-        osstyle = if version >= 10 then 'unity-mac-new' else 'unity-mac-old'
-        $(document.body).addClass osstyle
-
-      $(window).on 'resize', @checkFullscreen
-
-      @checkFullscreen()
-
-  checkFullscreen: ->
-    if $(window).height() + 1 >= screen.height
-      atom.workspaceView.addClass 'unity-ui-fullscreen'
-    else
-      atom.workspaceView.removeClass 'unity-ui-fullscreen'
+    atom.config.observe 'unity-ui.showIcons', ->
+      body = document.body
+      if atom.config.get('unity-ui.showIcons')
+        addClass(body, 'unity-ui-show-icons')
+      else
+        removeClass(body, 'unity-ui-show-icons')
+    atom.config.observe 'unity-ui.colorStatusIndicatorsInTreeView', ->
+      treeView = document.querySelector('.tree-view')
+      if atom.config.get('unity-ui.colorStatusIndicatorsInTreeView')
+        removeClass(treeView, 'unity-ui-fade-status')
+      else
+        addClass(treeView, 'unity-ui-fade-status')
